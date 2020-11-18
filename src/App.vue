@@ -1,26 +1,17 @@
 <template>
-  <section>
-    <h1>
-      What if we <span>replace</span> all <span>parking garages</span> in
-      Amsterdam for <span>bike spots</span>?
-    </h1>
-  </section>
-  <section></section>
-  <section></section>
-  <section></section>
+  <div>
+    <Subjects />
+    </div>
 </template>
 
 <script>
-// import Calculator from './components/Calculator'
+import Subjects from './components/Subjects'
 
 export default {
   name: "App",
-  components: {},
-  data: () => {
-    return {
-      message: "Hello Vue :)",
-    };
-  },
+  components: {
+    Subjects
+  }
 };
 </script>
 
