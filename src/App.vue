@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import 'vue-horizontal-scroll/dist/vue-horizontal-scroll.css'
 import Intro from "./components/Intro.vue";
 import MapAmsterdam from "./components/MapAmsterdam.vue";
 import ParkingSpot from "./components/ParkingSpot.vue";
