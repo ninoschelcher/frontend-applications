@@ -1,4 +1,5 @@
 <template>
+  <FetchData />
   <section>
     <Intro />
   </section>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import FetchData from './components/FetchData.vue';
 import Intro from "./components/Intro.vue";
 import MapAmsterdam from "./components/MapAmsterdam.vue";
 import ParkingSpot from "./components/ParkingSpot.vue";
@@ -22,6 +24,7 @@ import BarChart from "./components/BarChart.vue";
 export default {
   name: "App",
   components: {
+    FetchData,
     Intro,
     MapAmsterdam,
     ParkingSpot,

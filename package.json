@@ -39,12 +39,7 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "vue/valid-v-on": [
-        "error",
-        {
-          "modifiers": []
-        }
-      ]
+      "no-console": "off"
     }
   },
   "browserslist": [
