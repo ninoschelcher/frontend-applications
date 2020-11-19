@@ -1,15 +1,15 @@
 <template>
   <FetchData />
-  <section>
+  <section id="intro">
     <Intro />
   </section>
-  <section>
+  <section id="map">
     <MapAmsterdam />
   </section>
-  <section>
+  <section id="spot">
     <ParkingSpot />
   </section>
-  <section>
+  <section id="bar">
     <BarChart />
   </section>
 </template>

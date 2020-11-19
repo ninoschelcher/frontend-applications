@@ -13,7 +13,7 @@ export default {
   props: {
     level: {
       type: Number,
-      required: true,
+      required: true,  
     },
   },
 };
@@ -21,13 +21,13 @@ export default {
 
 <style>
 h1 {
-  margin-top: 1em;
-  font-size: 4em;
+  font-size: 4.5em;
 }
 h2 {
   font-size: 3em;
   text-align: center;
   margin-top:1em;
+  margin-bottom:.3em;
 }
 
 span {
