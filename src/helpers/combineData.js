@@ -1,5 +1,5 @@
 //Function to combine different datasets based on areaid that exists in both datasets, thanks Rijk :) //
-const combineDataSets = (specifications, geolocations) => {
+export const combineDataSets = (specifications, geolocations) => {
     //Find the areaid in both datasets
     const result = specifications.map((specification) => {
       const geolocation = geolocations.find(
@@ -26,5 +26,4 @@ const combineDataSets = (specifications, geolocations) => {
     return newDataset;
   };
   
-  export default combineDataSets;
   

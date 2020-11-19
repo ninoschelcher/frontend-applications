@@ -33,11 +33,10 @@ section:first-of-type div p {
 }
 
 section:first-of-type div button {
-  transform: translate(0, 10.5em);
   background: none;
   border: none;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.4em;
   cursor: pointer;
 }
 

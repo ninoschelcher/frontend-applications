@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import FetchData from './components/FetchData.vue';
+import FetchData from "./components/FetchData.vue";
 import Intro from "./components/Intro.vue";
 import MapAmsterdam from "./components/MapAmsterdam.vue";
 import ParkingSpot from "./components/ParkingSpot.vue";
@@ -47,8 +47,24 @@ body {
   background-color: #339653;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#app {
+  display: flex;
+  width: 400vw;
+}
+
 section {
   height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+section h2 {
+  margin-top:1em;
+
 }
 
 section:first-of-type {
