@@ -1,20 +1,20 @@
 <template>
-  <h2>How much <span>bike</span> capacity <span>potential</span> is there?</h2>
+  <Headings :level="2"
+    >How much <span>bike</span> capacity <span>potential</span> is
+    there?</Headings
+  >
 </template>
 
 <script>
+import Headings from "../components/Headings";
+
 export default {
   name: "BarChart",
+  components: {
+    Headings,
+  },
 };
 </script>
 
 <style scoped>
-h2 {
-  font-size: 3em;
-  text-align: center;
-}
-
-span {
-  color: #fff;
-}
 </style>

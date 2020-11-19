@@ -1,21 +1,20 @@
 <template>
-    <h2> A <span>car</span> on a parking spot <span>vs</span> a <span>bike</span>. </h2>
-    <p>Lets compare the two to a parking spot</p>
+  <Headings :level="2">
+    A <span>car</span> on a parking spot <span>vs</span> a <span>bike</span>.
+  </Headings>
+  <p>Lets compare the two to a parking spot</p>
 </template>
 
 <script>
+import Headings from "../components/Headings";
+
 export default {
-    name: 'ParkingSpot'
-}
+  name: "ParkingSpot",
+  components: {
+    Headings,
+  },
+};
 </script>
 
 <style scoped>
-h2 {
-    font-size:3em;
-    text-align: center;
-}
-
-span {
-    color:#fff;
-}
 </style>

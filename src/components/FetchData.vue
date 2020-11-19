@@ -1,5 +1,5 @@
 <template>
-  <h1>Test</h1>
+  <div></div>
 </template>
 
 <script>
@@ -30,4 +30,9 @@ export default {
 </script>
 
 <style scoped>
+
+div {
+  display: none;
+}
+
 </style>

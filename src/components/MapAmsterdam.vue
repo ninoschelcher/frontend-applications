@@ -1,21 +1,19 @@
 <template>
-    <h2> <span>Where</span> are the <span>parking garages</span> currently? </h2>
+  <Headings :level="2">
+    <span>Where</span> are the <span>parking garages</span> currently?</Headings
+  >
 </template>
 
 <script>
+import Headings from "../components/Headings";
+
 export default {
-    name: 'MapAmsterdam'
-}
+  name: "MapAmsterdam",
+  components: {
+    Headings,
+  },
+};
 </script>
 
 <style scoped>
-
-h2 {
-    font-size:3em;
-    text-align: center;
-}
-
-span {
-    color:#fff;
-}
 </style>

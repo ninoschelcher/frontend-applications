@@ -62,11 +62,6 @@ section {
   text-align: center;
 }
 
-section h2 {
-  margin-top:1em;
-
-}
-
 section:first-of-type {
   text-align: center;
   display: flex;
