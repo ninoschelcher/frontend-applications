@@ -79,16 +79,35 @@ getData().then((data) => {
     .attr("fill-opacity", "0.4")
     .attr("cursor", "pointer")
     .on("click", (d) => {
+      // console.log(data.name)
+      console.log(d)
       divTooltip.transition().duration(200).style("opacity", 0.9);
-      divTooltip
-        .html("Name: " + d.name)
-        .style("left", d3.event.pageX + "px")
-        .style("top", d3.event.pageY - 28 + "px");
+      // divTooltip
+        // .html("Name: " + d.name)
+        // .style("left", d3.event.pageX + "px")
+        // .style("top", d3.event.pageY - 28 + "px");
     });
 });
 
 export default {
   name: "Map",
+  props: {
+    data: Array,
+  },
+  data() {
+    return {
+      loadedData: [],
+    };
+  },
+  mounted() {
+    this.cleanData();
+  },
+  methods: {
+    async cleanData() {
+      const data = await fetchData();
+      this.loadedData = data;
+    },
+  },
 };
 </script>
 

@@ -57,6 +57,10 @@ section {
   height: 100vh;
   width: 100vw;
   text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 section:first-of-type {

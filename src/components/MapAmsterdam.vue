@@ -2,6 +2,7 @@
   <Headings :level="2">
     <span>Where</span> are the <span>parking garages</span> currently?</Headings
   >
+  <p> Where are they located all over Amsterdam? </p>
   <Map />
 </template>
 
