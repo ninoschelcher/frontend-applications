@@ -4,8 +4,8 @@
       What if we <span>replace</span> all <span>parking garages</span> in
       Amsterdam for <span>bike spots</span>?</Headings
     >
-    <p>Datastory about bikes and cars in Amsterdam</p>
-    <button v-on:click="scrollPage">Start the ride</button>
+    <p>Datastory about bikes and cars in Amsterdam.</p>
+    <button v-on:click="scrollPage">Start the ride!</button>
   </div>
   <img src="../assets/car.svg" alt="" />
 </template>
@@ -37,7 +37,7 @@ section:first-of-type div button {
   font-weight: bold;
   font-size: 1.4em;
   cursor: pointer;
-  transform: translate(0, 6em);
+  transform: translate(0, 3em);
   animation: updown 4s ease-in-out infinite;
 }
 

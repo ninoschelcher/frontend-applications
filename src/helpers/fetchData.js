@@ -1,6 +1,16 @@
-//Reusable function to fetch data from API and turning it into JSON, thanks Laurens :)
-export const fetchData = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  };
+import { fetchEndpoints } from './fetchEndpoints.js'
+import { parkingSpecifications, geoLocations, row, cityCode } from '../helpers/dataEndpoints';
+import { getSpecificLocation } from './specificLocation.js'
+import { combineDataSets } from './combineData.js'
+
+export async function fetchData () {
+  const parkingSpotSpecification = await fetchEndpoints(parkingSpecifications);
+  const geoLocation = await fetchEndpoints(geoLocations);
+  const specificLocations = getSpecificLocation(
+    parkingSpotSpecification,
+    row,
+    cityCode
+  );
+  const combinedData = combineDataSets(specificLocations, geoLocation);
+  return combinedData;
+}

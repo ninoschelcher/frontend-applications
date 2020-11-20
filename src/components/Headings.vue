@@ -21,7 +21,7 @@ export default {
 
 <style>
 h1 {
-  font-size: 4.5em;
+  font-size: 4em;
 }
 h2 {
   font-size: 3em;
@@ -38,6 +38,7 @@ span {
   h1 {
     max-width: 80%;
     margin: 0 auto;
+    font-size:4.5em;
   }
 }
 </style>
