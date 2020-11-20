@@ -5,9 +5,9 @@
       Amsterdam for <span>bike spots</span>?</Headings
     >
     <p>Datastory about bikes and cars in Amsterdam.</p>
-    <button v-on:click="scrollPage">Start the ride!</button>
+    <button v-on:click="startCar">Start the ride!</button>
   </div>
-  <img src="../assets/car.svg" alt="" />
+  <img id="car" src="../assets/car.svg" alt="" />
 </template>
 
 <script>
@@ -18,7 +18,12 @@ export default {
   components: {
     Headings,
   },
-  methods: {},
+  methods: {
+    startCar() {
+      const car = document.querySelector('#car')
+      car.style.left = "150vw";
+    }
+  },
 };
 </script>
 
@@ -62,7 +67,7 @@ img {
   max-width: 100px;
 }
 
-/* @keyframes drive {
+@keyframes drive {
   0% {
     transform: translateX(-1vw);
   }
@@ -74,7 +79,7 @@ img {
   100% {
     transform: translateX(-1vw);
   }
-} */
+}
 
 @media only screen and (min-width: 1500px) {
   section:first-of-type div button {

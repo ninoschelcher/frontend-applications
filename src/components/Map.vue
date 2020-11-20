@@ -54,7 +54,6 @@ d3.json(geojson).then((data) => {
     .attr("d", (d) => pathGenerator(d))
     .attr("transform", `translate(0, 20)`)
     .attr("stroke", "#000000")
-    .attr("stroke-width", "2")
     .attr("fill", "none");
 });
 
@@ -82,7 +81,7 @@ getData().then((data) => {
       // console.log(data.name)
       console.log(d)
       divTooltip.transition().duration(200).style("opacity", 0.9);
-      // divTooltip
+      divTooltip
         // .html("Name: " + d.name)
         // .style("left", d3.event.pageX + "px")
         // .style("top", d3.event.pageY - 28 + "px");

@@ -32,7 +32,8 @@ export default {
 
 <style scoped>
 #first {
-  margin-left: 3.5em;
+  margin-left: 5em;
+  margin-top:1.5em;
 }
 img {
   margin: 3em 0 0 0;
