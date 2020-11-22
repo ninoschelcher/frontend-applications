@@ -11,6 +11,7 @@
   <section id="bar">
     <BarChart />
   </section>
+  <Car />
 </template>
 
 <script>
@@ -18,6 +19,7 @@ import Intro from "./components/Intro.vue";
 import MapAmsterdam from "./components/MapAmsterdam.vue";
 import ParkingSpot from "./components/ParkingSpot.vue";
 import BarChart from "./components/BarChart.vue";
+import Car from './components/Car.vue';
 
 export default {
   name: "App",
@@ -26,6 +28,13 @@ export default {
     MapAmsterdam,
     ParkingSpot,
     BarChart,
+    Car,
+  },
+  mounted() {
+    document.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted() {
+    document.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>

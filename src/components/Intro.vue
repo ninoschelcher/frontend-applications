@@ -5,9 +5,8 @@
       Amsterdam for <span>bike spots</span>?</Headings
     >
     <p>Datastory about bikes and cars in Amsterdam.</p>
-    <button v-on:click="startCar">Start the ride!</button>
+    <button v-on:click="startCar">Shift + Scroll to begin!</button>
   </div>
-  <img id="car" src="../assets/car.svg" alt="" />
 </template>
 
 <script>
@@ -57,27 +56,6 @@ section:first-of-type div button {
 
   100% {
     transform: translateY(8.5em);
-  }
-}
-
-img {
-  animation: drive 3s ease-in-out infinite;
-  position: absolute;
-  bottom: 0;
-  max-width: 100px;
-}
-
-@keyframes drive {
-  0% {
-    transform: translateX(-1vw);
-  }
-
-  50% {
-    transform:translateX(1vw);
-  }
-
-  100% {
-    transform: translateX(-1vw);
   }
 }
 

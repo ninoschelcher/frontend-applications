@@ -3,7 +3,7 @@
     >How much <span>bike</span> capacity <span>potential</span> is
     there?</Headings
   >
-  <p> </p>
+  <p> Now how many bikes would replace the cars?</p>
 </template>
 
 <script>

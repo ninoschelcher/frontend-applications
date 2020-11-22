@@ -6,12 +6,13 @@
 
   <div>
     <transition name="fade" mode="out-in">
-      <img key=1 id="first" v-if="show" src="../assets/spot1.svg" />
-      <img key=2 v-else src="../assets/spot2.svg" />
+      <img key="1" id="first" v-if="show" src="../assets/spot1.svg" />
+      <img key="2" v-else src="../assets/spot2.svg" />
     </transition>
   </div>
 
-  <button @click="show = !show">Show comparison</button>
+  <button v-if="show" @click="show = !show">Show comparison</button>
+  <button v-else @click="show = !show">Show single spot</button>
 </template>
 
 <script>
@@ -33,7 +34,7 @@ export default {
 <style scoped>
 #first {
   margin-left: 5em;
-  margin-top:1.5em;
+  margin-top: 1.5em;
 }
 img {
   margin: 3em 0 0 0;
@@ -55,17 +56,16 @@ button {
   outline: none;
   position: relative;
   margin: 0 auto;
-  top: -4.5em;
+  top: -8em;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .4s ease-out;
+  transition: opacity 0.4s ease-out;
 }
 
 .fade-enter,
 .fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
-
 </style>

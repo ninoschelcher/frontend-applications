@@ -1,5 +1,11 @@
 <template>
-  <div id="map"></div>
+  <div>
+    <button @click="test">Show locations</button>
+    <button @click="test">Show as capacity</button>
+  </div>
+  <div id="map">
+    <svg width="1200px" height="800px" />
+  </div>
 </template>
 
 <script>
@@ -17,8 +23,8 @@ const height = 800;
 
 const projection = d3
   .geoMercator()
-  .scale(140000)
-  .center([4.89, 52.34])
+  .scale(150000)
+  .center([4.89, 52.35])
   .translate([width / 2, height / 2]);
 
 const pathGenerator = d3.geoPath().projection(projection);
@@ -26,11 +32,6 @@ const pathGenerator = d3.geoPath().projection(projection);
 const map = d3
   .select("#map")
   .append("svg")
-  .call(
-    d3.zoom().on("zoom", function () {
-      map.attr("transform", d3.event.transform);
-    })
-  )
   .attr("width", width)
   .attr("height", height)
   .attr("preserveAspectRatio", "xMinYMin meet")
@@ -38,9 +39,8 @@ const map = d3
 
 const mapG = map.append("g");
 const dotG = map.append("g");
-const dots = dotG.selectAll("circle");
 
-const divTooltip = d3
+const toolTip = d3
   .select("#map")
   .append("div")
   .attr("class", "tooltip")
@@ -58,7 +58,8 @@ d3.json(geojson).then((data) => {
 });
 
 getData().then((data) => {
-  dots
+  const dots = dotG
+    .selectAll("circle")
     .data(data)
     .enter()
     .append("circle")
@@ -71,21 +72,29 @@ getData().then((data) => {
       "cy",
       (d) => projection([d.coordinates.longitude, d.coordinates.latitude])[1]
     )
+    .attr("r", "0");
+
+  dots
+    .transition()
+    .duration(2000)
     .attr("r", (d) => d.capacity / 50)
     .attr("opacity", "1")
     .attr("stroke", "white")
     .attr("fill", "black")
     .attr("fill-opacity", "0.4")
     .attr("cursor", "pointer")
-    .on("click", (d) => {
-      // console.log(data.name)
-      console.log(d)
-      divTooltip.transition().duration(200).style("opacity", 0.9);
-      divTooltip
-        // .html("Name: " + d.name)
-        // .style("left", d3.event.pageX + "px")
-        // .style("top", d3.event.pageY - 28 + "px");
-    });
+
+  // console.log(data)
+
+  dots.on("click", (d, data) => {
+    console.log(data.name);
+    console.log(d);
+    toolTip.transition().duration(200).style("opacity", 0.9);
+    toolTip
+      .html("Name: " + data.name)
+      .style("left", d.event.pageX + "px")
+      .style("top", d.event.pageY - 28 + "px");
+  });
 });
 
 export default {
@@ -119,5 +128,29 @@ svg {
 
 svg:first-of-type {
   display: none;
+}
+
+div:first-of-type {
+  margin-top: 1em;
+}
+
+button {
+  margin: 0 1em;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  display: block;
+  height: 75px;
+  text-align: left;
+  font-family: "Inter";
+  background-color: darkred;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 5px;
 }
 </style>
