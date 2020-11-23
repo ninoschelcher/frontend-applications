@@ -22,12 +22,17 @@ export default {
   },
   data() {
     return {
-      chartData: this.chartData,
+      chartData: [],
     };
   },
-  async created() {
-    const data = await fetchData();
-    this.chartData = data;
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    async getData() {
+      const data = await fetchData();
+      this.chartData = data;
+    },
   },
 };
 </script>

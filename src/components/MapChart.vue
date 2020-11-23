@@ -7,8 +7,7 @@
       Show as capacity
     </button>
   </div>
-  <div id="map">
-  </div>
+  <div id="map"></div>
 </template>
 
 <script>
@@ -23,7 +22,7 @@ export default {
       isActive: true,
     };
   },
-  created() {
+  mounted() {
     let data = this.chartData;
 
     const width = 1200;
@@ -32,7 +31,7 @@ export default {
     const projection = d3
       .geoMercator()
       .scale(150000)
-      .center([4.88, 52.35])
+      .center([4.88, 52.34])
       .translate([width / 2, height / 2]);
 
     const pathGenerator = d3.geoPath().projection(projection);
@@ -81,6 +80,8 @@ export default {
       )
       .attr("r", "0");
 
+    // console.log("test");
+
     dots
       .transition()
       .duration(1500)
@@ -92,24 +93,17 @@ export default {
       .attr("cursor", "pointer");
 
     dots.on("click", (d, data) => {
-      toolTip.transition().duration(500).style("opacity", 0.9);
+      console.log("test");
+      toolTip
+        .transition()
+        .duration(500)
+        .style("opacity", 0.9)
+        .style("visibility", "visible");
       toolTip
         .html("<strong>Name:</strong> " + data.name)
-        .style("left", d.pageX + "px")
-        .style("top", d.pageY + "px");
+        .style("left", d.offsetX + "px")
+        .style("top", d.offsetY + "px");
     });
-
-    const zoom = d3.zoom().scaleExtent([1, 8]).on("zoom", zoomed);
-
-    map.call(zoom);
-
-    function zoomed() {
-      map
-        .selectAll("circle") // To prevent stroke width from scaling
-        .attr("transform", d3.event.transform);
-    }
-
-    // console.log(map);
   },
   methods: {
     asCapacity() {
