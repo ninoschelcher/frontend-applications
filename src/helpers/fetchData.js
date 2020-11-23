@@ -12,5 +12,6 @@ export default async function fetchData () {
     cityCode
   );
   const combinedData = combineDataSets(specificLocations, geoLocation);
+  console.log("Raw output data",combinedData);
   return combinedData;
 }

@@ -5,7 +5,7 @@
       <span>parking garages</span> currently?</Headings
     >
     <p>Where are they located all over Amsterdam?</p>
-    <MapChart :chartData="chartData" />
+    <MapChart v-if="isDataLoaded" :chartData="chartData" />
   </section>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       chartData: [],
+      isDataLoaded: false,
     };
   },
   mounted() {
@@ -32,6 +33,7 @@ export default {
     async getData() {
       const data = await fetchData();
       this.chartData = data;
+      this.isDataLoaded = true;
     },
   },
 };

@@ -42,7 +42,12 @@ export default {
       .attr("width", width)
       .attr("height", height)
       .attr("preserveAspectRatio", "xMinYMin meet")
-      .attr("viewBox", `0 0 ${width} ${height}`);
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .call(
+        d3.zoom().on("zoom", function () {
+          map.attr("transform", d3.event.transform);
+        })
+      );
 
     const mapG = map.append("g");
     const dotG = map.append("g");
@@ -80,8 +85,6 @@ export default {
       )
       .attr("r", "0");
 
-    // console.log("test");
-
     dots
       .transition()
       .duration(1500)
@@ -104,6 +107,8 @@ export default {
         .style("left", d.offsetX + "px")
         .style("top", d.offsetY + "px");
     });
+
+    // console.log("test");
   },
   methods: {
     asCapacity() {
