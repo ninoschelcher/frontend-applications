@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
 
 #app {
     display: flex;
-    width: 400vw;
+    width: 500vw;
 }
 
 section {

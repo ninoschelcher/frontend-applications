@@ -6,6 +6,9 @@
     <button :class="{ active: !isActive }" v-on:click="asCapacity">
       Show as capacity
     </button>
+    <button :class="{ active: !isActive }" v-on:click="asCharging">
+      Show charging points
+    </button>
   </div>
   <div id="map"></div>
 </template>
@@ -113,7 +116,7 @@ export default {
   methods: {
     asCapacity() {
       this.isActive = !this.isActive;
-      const dots = d3.selectAll("circle");
+      const dots = d3.selectAll("circle").data(this.chartData);
 
       dots
         .transition()
@@ -130,7 +133,7 @@ export default {
     },
     asNormal() {
       this.isActive = !this.isActive;
-      const dots = d3.selectAll("circle");
+      const dots = d3.selectAll("circle").data(this.chartData);
 
       dots
         .transition()
@@ -144,6 +147,30 @@ export default {
         .attr("fill", "black")
         .attr("fill-opacity", "0.4")
         .attr("cursor", "pointer");
+    },
+    asCharging() {
+      this.isActive = !this.isActive;
+      const selectedData = this.chartData.filter(
+        (element) => element.chargingpoints > 0
+      );
+
+      const dots = d3.selectAll("circle").data(selectedData);
+
+      dots
+        .enter()
+        .transition()
+        .duration(1500)
+        .attr("r", "0")
+        .transition()
+        .duration(1500)
+        .attr("r", (d) => d.chargingpoints * 5)
+        .attr("opacity", "1")
+        .attr("stroke", "white")
+        .attr("fill", "black")
+        .attr("fill-opacity", "0.4")
+        .attr("cursor", "pointer");
+
+      dots.exit().remove();
     },
   },
 };
