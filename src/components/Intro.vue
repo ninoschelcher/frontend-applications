@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <Headings :level="1">
-      What if we <span>replace</span> all <span>parking garages</span> in
-      Amsterdam for <span>bike spots</span>?</Headings
-    >
-    <p>Datastory about bikes and cars in Amsterdam.</p>
-    <button v-on:click="startCar">Shift + Scroll to begin!</button>
-  </div>
+  <section>
+    <div>
+      <Headings :level="1">
+        What if we <span>replace</span> all <span>parking garages</span> in
+        Amsterdam for <span>bike spots</span>?</Headings
+      >
+      <p>Datastory about bikes and cars in Amsterdam.</p>
+      <button v-on:click="startCar">Shift + Scroll to begin!</button>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -19,9 +21,9 @@ export default {
   },
   methods: {
     startCar() {
-      const car = document.querySelector('#car')
+      const car = document.querySelector("#car");
       car.style.left = "150vw";
-    }
+    },
   },
 };
 </script>

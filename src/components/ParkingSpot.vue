@@ -1,18 +1,20 @@
 <template>
-  <Headings :level="2">
-    A <span>car</span> on a parking spot <span>vs</span> a <span>bike</span>.
-  </Headings>
-  <p>Lets compare the two to a parking spot.</p>
+  <section>
+    <Headings :level="2">
+      A <span>car</span> on a parking spot <span>vs</span> a <span>bike</span>.
+    </Headings>
+    <p>Lets compare the two to a parking spot.</p>
 
-  <div>
-    <transition name="fade" mode="out-in">
-      <img key="1" id="first" v-if="show" src="../assets/spot1.svg" />
-      <img key="2" v-else src="../assets/spot2.svg" />
-    </transition>
-  </div>
+    <div>
+      <transition name="fade" mode="out-in">
+        <img key="1" id="first" v-if="show" src="../assets/spot1.svg" />
+        <img key="2" v-else src="../assets/spot2.svg" />
+      </transition>
+    </div>
 
-  <button v-if="show" v-on:click="show = !show">Show comparison</button>
-  <button v-else v-on:click="show = !show">Show single spot</button>
+    <button v-if="show" v-on:click="show = !show">Show comparison</button>
+    <button v-else v-on:click="show = !show">Show single spot</button>
+  </section>
 </template>
 
 <script>
