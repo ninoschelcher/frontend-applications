@@ -19,7 +19,7 @@ import Intro from "./components/Intro.vue";
 import MapAmsterdam from "./components/MapAmsterdam.vue";
 import ParkingSpot from "./components/ParkingSpot.vue";
 import BarChart from "./components/BarChart.vue";
-import Car from './components/Car.vue';
+import Car from "./components/Car.vue";
 
 export default {
   name: "App",
@@ -31,10 +31,10 @@ export default {
     Car,
   },
   mounted() {
-    document.addEventListener('scroll', this.handleScroll);
+    document.addEventListener("scroll", this.handleScroll);
   },
   unmounted() {
-    document.removeEventListener('scroll', this.handleScroll);
+    document.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>

@@ -3,7 +3,7 @@ import { parkingSpecifications, geoLocations, row, cityCode } from '../helpers/d
 import { getSpecificLocation } from './specificLocation.js'
 import { combineDataSets } from './combineData.js'
 
-export async function fetchData () {
+export default async function fetchData () {
   const parkingSpotSpecification = await fetchEndpoints(parkingSpecifications);
   const geoLocation = await fetchEndpoints(geoLocations);
   const specificLocations = getSpecificLocation(

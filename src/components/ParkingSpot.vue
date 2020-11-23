@@ -11,8 +11,8 @@
     </transition>
   </div>
 
-  <button v-if="show" @click="show = !show">Show comparison</button>
-  <button v-else @click="show = !show">Show single spot</button>
+  <button v-if="show" v-on:click="show = !show">Show comparison</button>
+  <button v-else v-on:click="show = !show">Show single spot</button>
 </template>
 
 <script>
