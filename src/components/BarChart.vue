@@ -5,6 +5,9 @@
       there?</Headings
     >
     <p>Now how many bikes would replace the cars?</p>
+    <div>
+     <img src="../assets/comparison.svg">
+    </div>
   </section>
 </template>
 
@@ -20,4 +23,7 @@ export default {
 </script>
 
 <style scoped>
+img {
+  margin-top:1em;
+}
 </style>
