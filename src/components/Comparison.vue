@@ -12,7 +12,7 @@
 <script>
 import Headings from "../components/Headings";
 import fetchData from "../helpers/fetchData.js";
-import BarChart from "../components/visualization/BarChart.vue";
+import BarChart from "../components/visualizations/BarChart.vue";
 
 export default {
   name: "Comparison",

@@ -12,7 +12,7 @@
 
 <script>
 import Headings from "../components/Headings";
-import MapChart from "../components/visualization/MapChart.vue";
+import MapChart from "../components/visualizations/MapChart.vue";
 import fetchData from "../helpers/fetchData.js";
 
 export default {
