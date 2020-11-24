@@ -54,13 +54,13 @@ export default {
     const width = 1200;
     const height = 700;
 
-    const projection = d3
+    this.projection = d3
       .geoMercator()
       .scale(150000)
       .center([4.88, 52.35])
       .translate([width / 2, height / 2]);
 
-    const pathGenerator = d3.geoPath().projection(projection);
+    this.pathGenerator = d3.geoPath().projection(this.projection);
 
     const map = d3
       .select("#map")
@@ -68,24 +68,16 @@ export default {
       .attr("width", width)
       .attr("height", height)
       .attr("preserveAspectRatio", "xMinYMin meet")
-      .attr("viewBox", `0 0 ${width} ${height}`)
-      .call(
-        d3.zoom().on("zoom", function () {
-          map.attr("transform", d3.event.transform);
-        })
-      );
+      .attr("viewBox", `0 0 ${width} ${height}`);
 
     const svg = d3.select("svg");
-
     const mapG = map.append("g");
     const dotG = map.append("g");
+    const g = d3.selectAll("g");
 
-    const zoom = d3
-      .zoom()
-      .scaleExtent([1, 2])
-      .on("zoom", (d) => {
-        svg.attr("transform", d.transform);
-      });
+    const zoom = d3.zoom().on("zoom", (d) => {
+      g.attr("transform", d.transform);
+    });
 
     svg.call(zoom);
 
@@ -100,7 +92,7 @@ export default {
       district
         .enter()
         .append("path")
-        .attr("d", (d) => pathGenerator(d))
+        .attr("d", (d) => this.pathGenerator(d))
         .attr("transform", `translate(0, 20)`)
         .attr("stroke", "#000000")
         .attr("fill", "none");
@@ -114,11 +106,13 @@ export default {
       .attr("transform", `translate(0, 20)`)
       .attr(
         "cx",
-        (d) => projection([d.coordinates.longitude, d.coordinates.latitude])[0]
+        (d) =>
+          this.projection([d.coordinates.longitude, d.coordinates.latitude])[0]
       )
       .attr(
         "cy",
-        (d) => projection([d.coordinates.longitude, d.coordinates.latitude])[1]
+        (d) =>
+          this.projection([d.coordinates.longitude, d.coordinates.latitude])[1]
       )
       .attr("r", "0");
 
