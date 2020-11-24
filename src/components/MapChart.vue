@@ -1,12 +1,33 @@
 <template>
   <div>
-    <button :class="{ active: isActive }" v-on:click="asNormal">
+    <button
+      :class="{ active: showNormal }"
+      v-on:click="
+        asNormal();
+        resetActive();
+        showNormal = true;
+      "
+    >
       Show locations
     </button>
-    <button :class="{ active: !isActive }" v-on:click="asCapacity">
+    <button
+      :class="{ active: showCapacity }"
+      v-on:click="
+        asCapacity();
+        resetActive();
+        showCapacity = true;
+      "
+    >
       Show as capacity
     </button>
-    <button :class="{ active: !isActive }" v-on:click="asCharging">
+    <button
+      :class="{ active: showCharging }"
+      v-on:click="
+        asCharging();
+        resetActive();
+        showCharging = true;
+      "
+    >
       Show charging points
     </button>
   </div>
@@ -22,7 +43,9 @@ export default {
   props: ["chartData"],
   data() {
     return {
-      isActive: true,
+      showNormal: true,
+      showCapacity: false,
+      showCharging: false,
     };
   },
   mounted() {
@@ -129,7 +152,6 @@ export default {
   },
   methods: {
     asCapacity() {
-      this.isActive = !this.isActive;
       const dots = d3.selectAll("circle").data(this.chartData);
 
       dots
@@ -166,7 +188,6 @@ export default {
       dots.exit().remove();
     },
     asNormal() {
-      this.isActive = !this.isActive;
       const dots = d3.selectAll("circle").data(this.chartData);
 
       dots
@@ -201,11 +222,11 @@ export default {
       });
     },
     asCharging() {
-      this.isActive = !this.isActive;
       const selectedData = this.chartData.filter(
         (element) => element.chargingpoints > 0
       );
 
+      console.log(selectedData);
       const dots = d3.selectAll("circle").data(selectedData);
 
       dots
@@ -222,6 +243,11 @@ export default {
         .attr("cursor", "pointer");
 
       dots.exit().remove();
+    },
+    resetActive() {
+      this.showNormal = false;
+      this.showCapacity = false;
+      this.showCharging = false;
     },
   },
 };
