@@ -29,12 +29,12 @@ export default {
     let data = this.chartData;
 
     const width = 1200;
-    const height = 800;
+    const height = 700;
 
     const projection = d3
       .geoMercator()
       .scale(150000)
-      .center([4.88, 52.34])
+      .center([4.88, 52.35])
       .translate([width / 2, height / 2]);
 
     const pathGenerator = d3.geoPath().projection(projection);
@@ -55,7 +55,7 @@ export default {
     const mapG = map.append("g");
     const dotG = map.append("g");
 
-    const toolTip = d3
+    this.toolTip = d3
       .select("#map")
       .append("div")
       .attr("class", "tooltip")
@@ -100,13 +100,19 @@ export default {
 
     dots.on("click", (d, data) => {
       console.log("test");
-      toolTip
+      this.toolTip
         .transition()
         .duration(500)
         .style("opacity", 0.9)
         .style("visibility", "visible");
-      toolTip
-        .html("<strong>Name:</strong> " + data.name)
+      this.toolTip
+        .html(
+          "<strong>Name:</strong> " +
+            data.name +
+            "<br>" +
+            "<strong>Capacity: </strong>" +
+            data.capacity
+        )
         .style("left", d.offsetX + "px")
         .style("top", d.offsetY + "px");
     });
@@ -130,6 +136,27 @@ export default {
         .attr("fill", "black")
         .attr("fill-opacity", "0.4")
         .attr("cursor", "pointer");
+
+      dots.on("click", (d, data) => {
+        console.log("test");
+        this.toolTip
+          .transition()
+          .duration(500)
+          .style("opacity", 0.9)
+          .style("visibility", "visible");
+        this.toolTip
+          .html(
+            "<strong>Name:</strong> " +
+              data.name +
+              "<br>" +
+              "<strong>Capacity: </strong>" +
+              data.capacity
+          )
+          .style("left", d.offsetX + "px")
+          .style("top", d.offsetY + "px");
+      });
+
+      dots.exit().remove();
     },
     asNormal() {
       this.isActive = !this.isActive;
@@ -147,6 +174,25 @@ export default {
         .attr("fill", "black")
         .attr("fill-opacity", "0.4")
         .attr("cursor", "pointer");
+
+      dots.on("click", (d, data) => {
+        console.log("test");
+        this.toolTip
+          .transition()
+          .duration(500)
+          .style("opacity", 0.9)
+          .style("visibility", "visible");
+        this.toolTip
+          .html(
+            "<strong>Name:</strong> " +
+              data.name +
+              "<br>" +
+              "<strong>Capacity: </strong>" +
+              data.capacity
+          )
+          .style("left", d.offsetX + "px")
+          .style("top", d.offsetY + "px");
+      });
     },
     asCharging() {
       this.isActive = !this.isActive;
@@ -157,7 +203,6 @@ export default {
       const dots = d3.selectAll("circle").data(selectedData);
 
       dots
-        .enter()
         .transition()
         .duration(1500)
         .attr("r", "0")

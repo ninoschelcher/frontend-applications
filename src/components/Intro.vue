@@ -6,7 +6,7 @@
         Amsterdam for <span>bike spots</span>?</Headings
       >
       <p>Datastory about bikes and cars in Amsterdam.</p>
-      <button v-on:click="startCar">Shift + Scroll to begin!</button>
+      <button>Scroll to begin!</button>
     </div>
   </section>
 </template>
@@ -18,12 +18,6 @@ export default {
   name: "Intro",
   components: {
     Headings,
-  },
-  methods: {
-    startCar() {
-      const car = document.querySelector("#car");
-      car.style.left = "150vw";
-    },
   },
 };
 </script>
