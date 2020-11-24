@@ -1,6 +1,10 @@
 <template>
   <div id="bars">
     <div>
+      <div class="info">
+        <img src="../../assets/barcar.svg" />
+        <p>= 1000 car spots</p>
+      </div>
       <div class="imgwrapper">
         <img
           src="../../assets/barcar.svg"
@@ -12,6 +16,10 @@
       <h3 class="amounts">{{ carAmount }} + Car Spots</h3>
     </div>
     <div>
+      <div class="info">
+        <img src="../../assets/bike.svg" />
+        <p>= 1000 bike spots</p>
+      </div>
       <div class="imgwrapper">
         <img
           src="../../assets/bike.svg"
@@ -67,12 +75,15 @@ export default {
   width: 500px;
   height: 650px;
   margin: 0 6em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: flex-end;
 }
 
 #bars > div:first-of-type {
   display: flex;
   flex-direction: column;
-  align-self: baseline;
 }
 
 #bars .amounts {
@@ -80,6 +91,22 @@ export default {
   border-top: 3px solid #000;
   padding-top: 0.5em;
   margin-top: 0.5em;
+}
+
+.info {
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -40px;
+}
+
+.info p {
+  font-weight: bold;
+  margin-left: 0.4em;
+  font-size: 1.5em;
 }
 
 .imgwrapper {
