@@ -26,6 +26,7 @@ export default {
     Car,
   },
   mounted() {
+    this.scrollX = 0;
     setTimeout(function () {
       window.scroll(0, 0);
     }, 1000);
@@ -36,7 +37,7 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      if (event.deltaY > 1) {
+      if (event.deltaY > 50) {
         this.scrollX =
           this.scrollX < document.body.scrollWidth
             ? this.scrollX + document.body.clientWidth

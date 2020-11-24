@@ -52,8 +52,19 @@ export default {
         })
       );
 
+    const svg = d3.select("svg");
+
     const mapG = map.append("g");
     const dotG = map.append("g");
+
+    const zoom = d3
+      .zoom()
+      .scaleExtent([1, 2])
+      .on("zoom", (d) => {
+        svg.attr("transform", d.transform);
+      });
+
+    svg.call(zoom);
 
     this.toolTip = d3
       .select("#map")
@@ -99,7 +110,6 @@ export default {
       .attr("cursor", "pointer");
 
     dots.on("click", (d, data) => {
-      console.log("test");
       this.toolTip
         .transition()
         .duration(500)
@@ -116,8 +126,6 @@ export default {
         .style("left", d.offsetX + "px")
         .style("top", d.offsetY + "px");
     });
-
-    // console.log("test");
   },
   methods: {
     asCapacity() {
@@ -138,7 +146,6 @@ export default {
         .attr("cursor", "pointer");
 
       dots.on("click", (d, data) => {
-        console.log("test");
         this.toolTip
           .transition()
           .duration(500)
@@ -176,7 +183,6 @@ export default {
         .attr("cursor", "pointer");
 
       dots.on("click", (d, data) => {
-        console.log("test");
         this.toolTip
           .transition()
           .duration(500)

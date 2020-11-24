@@ -6,6 +6,7 @@
     >
     <p>Where are they located all over Amsterdam?</p>
     <MapChart v-if="isDataLoaded" :chartData="chartData" />
+    <p id="data">Data used from RDW and Gemeente Amsterdam</p>
   </section>
 </template>
 
@@ -40,4 +41,10 @@ export default {
 </script>
 
 <style scoped>
+#data {
+  position: relative;
+  top: -5em;
+  font-size: 0.8em;
+  font-weight: bold;
+}
 </style>
