@@ -37,15 +37,26 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      if (event.deltaY > 50) {
+      if (event.deltaY > 0) {
         this.scrollX =
           this.scrollX < document.body.scrollWidth
-            ? this.scrollX + document.body.clientWidth
+            ? document.scrollingElement.scrollLeft %
+                document.body.clientWidth ==
+              0
+              ? this.scrollX + document.body.clientWidth
+              : this.scrollX
             : document.body.scrollWidth;
+
         window.scroll(this.scrollX, 0);
       } else if (event.deltaY < 0) {
         this.scrollX =
-          this.scrollX > 0 ? this.scrollX - document.body.clientWidth : 0;
+          this.scrollX > 0
+            ? document.scrollingElement.scrollLeft %
+                document.body.clientWidth ==
+              0
+              ? this.scrollX - document.body.clientWidth
+              : this.scrollX
+            : 0;
         window.scroll(this.scrollX, 0);
       }
     },
