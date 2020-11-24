@@ -2,7 +2,7 @@
   <Intro />
   <Map />
   <ParkingSpot />
-  <BarChart />
+  <Comparison />
   <Conclusion />
   <Car />
 </template>
@@ -11,7 +11,7 @@
 import Intro from "./components/Intro.vue";
 import Map from "./components/Map.vue";
 import ParkingSpot from "./components/ParkingSpot.vue";
-import BarChart from "./components/BarChart.vue";
+import Comparison from "./components/Comparison.vue";
 import Conclusion from "./components/Conclusion.vue";
 import Car from "./components/Car.vue";
 
@@ -21,7 +21,7 @@ export default {
     Intro,
     Map,
     ParkingSpot,
-    BarChart,
+    Comparison,
     Conclusion,
     Car,
   },

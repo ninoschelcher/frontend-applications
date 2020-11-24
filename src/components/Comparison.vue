@@ -1,25 +1,24 @@
 <template>
   <section>
-    <Headings :level="2">
-      <span>Where</span> are the
-      <span>parking garages</span> currently?</Headings
+    <Headings :level="2"
+      >How much <span>bike</span> capacity <span>potential</span> is
+      there?</Headings
     >
-    <p>Where are they located all over Amsterdam?</p>
-    <MapChart v-if="isDataLoaded" :chartData="chartData" />
-    <p id="data">Data used from RDW and Gemeente Amsterdam</p>
+    <p>Now how many bikes would replace the cars?</p>
+    <BarChart v-if="isDataLoaded" :chartData="chartData" />
   </section>
 </template>
 
 <script>
 import Headings from "../components/Headings";
-import MapChart from "../components/visualization/MapChart.vue";
 import fetchData from "../helpers/fetchData.js";
+import BarChart from "../components/visualization/BarChart.vue";
 
 export default {
-  name: "Map",
+  name: "Comparison",
   components: {
     Headings,
-    MapChart,
+    BarChart,
   },
   data() {
     return {
@@ -41,10 +40,4 @@ export default {
 </script>
 
 <style scoped>
-#data {
-  position: relative;
-  top: -5em;
-  font-size: 0.8em;
-  font-weight: bold;
-}
 </style>
