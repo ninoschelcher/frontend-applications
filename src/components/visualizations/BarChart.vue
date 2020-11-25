@@ -5,16 +5,14 @@
         <img src="../../assets/barcar.svg" />
         <p>= 1000 car spots</p>
       </div>
-      <transition name="fade" mode="out-in">
-        <div class="imgwrapper">
-          <img
-            src="../../assets/barcar.svg"
-            v-for="carAmount in countCars"
-            :key="carAmount"
-            id="car"
-          />
-        </div>
-      </transition>
+      <div class="imgwrapper">
+        <img
+          src="../../assets/barcar.svg"
+          v-for="carAmount in countCars"
+          :key="carAmount"
+          id="car"
+        />
+      </div>
       <h3 class="amounts">{{ carAmount }} + Car Spots</h3>
     </div>
     <div>
@@ -117,5 +115,17 @@ export default {
 .imgwrapper img {
   margin: 0.3em;
   max-width: 100px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition-delay: 0.2s;
 }
 </style>
