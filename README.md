@@ -13,7 +13,7 @@ Volkskrant, 2020
 
 # Concept 🌝
 
-In my concept I'll take the user through a small data story where I'll be answering different questions about how many bikes could replace cars in the Amsterdam parking garages. This experience is through horizontal scrolling on the web page. 
+In my concept I'll take the user through a small data story where I'll be answering different questions about how many bikes could replace cars in the Amsterdam parking garages. This experience is through horizontal scrolling on the web page which makes it look like you're literally 'going' through the story and don't have to click on multiple buttons. 
 
 ![concept](https://github.com/ninoschelcher/frontend-applications/blob/main/wiki-media/conceptfoto.png)
 
@@ -51,10 +51,20 @@ I'm gonna combine these 2 datasets, there will probably be some entries that don
 - **How big is the average car parking spot?** — Required to calculate/visualize how many bikes could fit in a parking spot.
 - **How long and wide is the average bicycle?** — Required to calculate how bikes could fit in a parking spot, I will probably take a regular city bike for this.
 
-### External Datasets?
-- [Amsterdam parking spaces](https://map.data.amsterdam.nl/maps/parkeervakken?REQUEST=Getfeature&VERSION=1.1.0&SERVICE=wfs&TYPENAME=alle_parkeervakken&outputformat=geojson) — This might come in handy if I wanted to use the parking spaces on the street instead of a parking garage because its more relevant to the cyclists who want to park their bike close to home.
-
 Full documentation about my research questions and explanations are [in my wiki](https://github.com/ninoschelcher/frontend-data/wiki/Concept-Iteration)
+
+# Installation Guide 💻
+There are a few steps required to do so you can get the program up and running on your own machine!
+
+### Clone project
+- Clone this repo to your local machine using `$ git clone https://github.com/ninoschelcher/frontend-applications.git`
+- Go to the directory by typing `$ cd frontend-applications `
+
+### Install packages
+Install all required packages by using `$ npm i`
+
+### Run project
+type `$ npm run serve` to start the program
 
 # Sources & Acknowledgements 🙋
 - [Max Hauser](https://github.com/max-hauser) — For regular feedback throughout the project.
