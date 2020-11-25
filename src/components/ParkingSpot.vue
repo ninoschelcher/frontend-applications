@@ -64,6 +64,7 @@ button {
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.4s ease-out;
+  transition-delay: 0.2s;
 }
 
 .fade-enter,

@@ -26,7 +26,7 @@ export default {
       isDataLoaded: false,
     };
   },
-  mounted() {
+  created() {
     this.getData();
   },
   methods: {

@@ -27,9 +27,6 @@ export default {
   },
   mounted() {
     this.scrollX = 0;
-    setTimeout(function () {
-      window.scroll(0, 0);
-    }, 1000);
     window.addEventListener("mousewheel", this.handleScroll);
   },
   unmounted() {

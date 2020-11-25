@@ -5,14 +5,16 @@
         <img src="../../assets/barcar.svg" />
         <p>= 1000 car spots</p>
       </div>
-      <div class="imgwrapper">
-        <img
-          src="../../assets/barcar.svg"
-          v-for="carAmount in countCars"
-          :key="carAmount"
-          id="car"
-        />
-      </div>
+      <transition name="fade" mode="out-in">
+        <div class="imgwrapper">
+          <img
+            src="../../assets/barcar.svg"
+            v-for="carAmount in countCars"
+            :key="carAmount"
+            id="car"
+          />
+        </div>
+      </transition>
       <h3 class="amounts">{{ carAmount }} + Car Spots</h3>
     </div>
     <div>
@@ -56,7 +58,6 @@ export default {
 
     this.carAmount = data.reduce(countCars, 0);
     this.bikeAmount = this.carAmount * 6;
-
     this.countCars = Math.floor(this.carAmount / 1000);
     this.countBikes = Math.floor(this.bikeAmount / 1000);
   },
