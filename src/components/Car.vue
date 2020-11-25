@@ -14,20 +14,20 @@ img {
   position: fixed;
   bottom: 0;
   max-width: 100px;
-  left:47%;
+  left: 47%;
 }
 
 @keyframes drive {
   0% {
-    transform: translateX(-.5vw);
+    transform: translateX(-0.5vw);
   }
 
   50% {
-    transform:translateX(1vw);
+    transform: translateX(1vw);
   }
 
   100% {
-    transform: translateX(-.5vw);
+    transform: translateX(-0.5vw);
   }
 }
 </style>

@@ -5,19 +5,21 @@
         What if we <span>replace</span> all <span>parking garages</span> in
         Amsterdam for <span>bike spots</span>?</Headings
       >
-      <p>Datastory about bikes and cars in Amsterdam.</p>
+      <Subtitle msg="Datastory about bikes and cars in Amsterdam." />
       <button>Scroll to begin!</button>
     </div>
   </section>
 </template>
 
 <script>
-import Headings from "../components/Headings";
+import Headings from "../components/textelements/Headings";
+import Subtitle from "../components/textelements/Subtitle";
 
 export default {
   name: "Intro",
   components: {
     Headings,
+    Subtitle,
   },
 };
 </script>

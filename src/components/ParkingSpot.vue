@@ -3,32 +3,32 @@
     <Headings :level="2">
       A <span>car</span> on a parking spot <span>vs</span> a <span>bike</span>.
     </Headings>
-    <p>Lets compare the two to a parking spot.</p>
-
+    <Subtitle msg="Lets compare the two to a parking spot." />
     <div>
       <transition name="fade" mode="out-in">
         <img key="1" id="first" v-if="show" src="../assets/spot1.svg" />
         <img key="2" v-else src="../assets/spot2.svg" />
       </transition>
     </div>
-
     <button v-if="show" v-on:click="show = !show">Show comparison</button>
     <button v-else v-on:click="show = !show">Show single spot</button>
   </section>
 </template>
 
 <script>
-import Headings from "../components/Headings";
+import Headings from "../components/textelements/Headings";
+import Subtitle from "../components/textelements/Subtitle";
 
 export default {
   name: "ParkingSpot",
+  components: {
+    Headings,
+    Subtitle,
+  },
   data() {
     return {
       show: true,
     };
-  },
-  components: {
-    Headings,
   },
 };
 </script>

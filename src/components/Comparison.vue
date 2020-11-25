@@ -4,20 +4,22 @@
       >How much <span>bike</span> capacity <span>potential</span> is
       there?</Headings
     >
-    <p>Now how many bikes would replace the cars?</p>
+    <Subtitle msg="Now how many bikes would replace the cars?" />
     <BarChart v-if="isDataLoaded" :chartData="chartData" />
   </section>
 </template>
 
 <script>
-import Headings from "../components/Headings";
+import Headings from "../components/textelements/Headings";
+import Subtitle from "../components/textelements/Subtitle";
+import BarChart from "../components/visualizations/BarChart";
 import fetchData from "../helpers/fetchData.js";
-import BarChart from "../components/visualizations/BarChart.vue";
 
 export default {
   name: "Comparison",
   components: {
     Headings,
+    Subtitle,
     BarChart,
   },
   data() {

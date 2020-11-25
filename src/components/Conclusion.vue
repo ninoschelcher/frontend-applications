@@ -5,7 +5,7 @@
         <span>What</span> can we <span>relate</span> these numbers
         <span>to?</span>
       </Headings>
-      <p>Some things could be different.</p>
+      <Subtitle msg="Some things could be different." />
     </div>
     <div id="first">
       <img src="../assets/bikegarage.png" alt="" />
@@ -23,14 +23,15 @@
 </template>
 
 <script>
-import Headings from "../components/Headings";
+import Headings from "../components/textelements/Headings";
+import Subtitle from "../components/textelements/Subtitle";
 
 export default {
   name: "Conclusion",
   components: {
     Headings,
+    Subtitle,
   },
-  methods: {},
 };
 </script>
 

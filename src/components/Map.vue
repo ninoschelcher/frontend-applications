@@ -4,21 +4,23 @@
       <span>Where</span> are the
       <span>parking garages</span> currently?</Headings
     >
-    <p>Where are they located all over Amsterdam?</p>
+    <Subtitle msg="Where are they located all over Amsterdam?" />
     <MapChart v-if="isDataLoaded" :chartData="chartData" />
     <p id="data">Data used from RDW and Gemeente Amsterdam</p>
   </section>
 </template>
 
 <script>
-import Headings from "../components/Headings";
-import MapChart from "../components/visualizations/MapChart.vue";
+import Headings from "../components/textelements/Headings";
+import Subtitle from "../components/textelements/Subtitle";
+import MapChart from "../components/visualizations/MapChart";
 import fetchData from "../helpers/fetchData.js";
 
 export default {
   name: "Map",
   components: {
     Headings,
+    Subtitle,
     MapChart,
   },
   data() {
