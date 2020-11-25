@@ -11,6 +11,11 @@ Now the goal is to find interesting insights in these (37) datasets about parkin
 
 Volkskrant, 2020
 
+# Concept 🌝
+
+In my concept I'll take the user through a small data story where I'll be answering different questions about how many bikes could replace cars in the Amsterdam parking garages. This experience is through horizontal scrolling on the web page. 
+![concept](https://github.com/ninoschelcher/frontend-applications/blob/main/wiki-media/conceptfoto.png)
+
 # Research Question(s) 🔍
 
 Bikes in Amsterdam came up in my head during my brainstorm, there are a lot of them in Amsterdam. Why wouldn't it be interesting to know how many bikes could fit into the space that parking garages have right now? So I came up with the following research question.
@@ -49,9 +54,6 @@ I'm gonna combine these 2 datasets, there will probably be some entries that don
 - [Amsterdam parking spaces](https://map.data.amsterdam.nl/maps/parkeervakken?REQUEST=Getfeature&VERSION=1.1.0&SERVICE=wfs&TYPENAME=alle_parkeervakken&outputformat=geojson) — This might come in handy if I wanted to use the parking spaces on the street instead of a parking garage because its more relevant to the cyclists who want to park their bike close to home.
 
 Full documentation about my research questions and explanations are [in my wiki](https://github.com/ninoschelcher/frontend-data/wiki/Concept-Iteration)
-
-# Concept 🌝
-
 
 # Sources & Acknowledgements 🙋
 - [Max Hauser](https://github.com/max-hauser) — For regular feedback throughout the project.
