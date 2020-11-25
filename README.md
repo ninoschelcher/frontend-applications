@@ -61,10 +61,10 @@ There are a few steps required to do so you can get the program up and running o
 - Go to the directory by typing `$ cd frontend-applications `
 
 ### Install packages
-Install all required packages by using `$ npm i`
+- Install all required packages by using `$ npm i`
 
 ### Run project
-type `$ npm run serve` to start the program
+- type `$ npm run serve` to start the program
 
 # Sources & Acknowledgements 🙋
 - [Max Hauser](https://github.com/max-hauser) — For regular feedback throughout the project.
