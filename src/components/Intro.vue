@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Headings from "../components/textelements/Headings";
-import Subtitle from "../components/textelements/Subtitle";
+import Headings from "@/components/textelements/Headings";
+import Subtitle from "@/components/textelements/Subtitle";
 
 export default {
   name: "Intro",

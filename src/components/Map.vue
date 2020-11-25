@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import Headings from "../components/textelements/Headings";
-import Subtitle from "../components/textelements/Subtitle";
-import MapChart from "../components/visualizations/MapChart";
-import fetchData from "../helpers/fetchData.js";
+import Headings from "@/components/textelements/Headings";
+import Subtitle from "@/components/textelements/Subtitle";
+import MapChart from "@/components/visualizations/MapChart";
+import fetchData from "@/helpers/fetchData.js";
 
 export default {
   name: "Map",

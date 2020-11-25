@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { geojson } from "../../helpers/dataEndpoints";
+import { geojson } from "@/helpers/dataEndpoints";
 import * as d3 from "d3";
 
 export default {

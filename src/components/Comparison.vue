@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Headings from "../components/textelements/Headings";
-import Subtitle from "../components/textelements/Subtitle";
-import BarChart from "../components/visualizations/BarChart";
-import fetchData from "../helpers/fetchData.js";
+import Headings from "@/components/textelements/Headings";
+import Subtitle from "@/components/textelements/Subtitle";
+import BarChart from "@/components/visualizations/BarChart";
+import fetchData from "@/helpers/fetchData.js";
 
 export default {
   name: "Comparison",

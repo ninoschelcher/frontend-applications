@@ -2,12 +2,12 @@
   <div id="bars">
     <div>
       <div class="info">
-        <img src="../../assets/barcar.svg" />
+        <img src="@/assets/barcar.svg" />
         <p>= 1000 car spots</p>
       </div>
       <div class="imgwrapper">
         <img
-          src="../../assets/barcar.svg"
+          src="@/assets/barcar.svg"
           v-for="carAmount in countCars"
           :key="carAmount"
           id="car"
@@ -17,12 +17,12 @@
     </div>
     <div>
       <div class="info">
-        <img src="../../assets/bike.svg" />
+        <img src="@/assets/bike.svg" />
         <p>= 1000 bike spots</p>
       </div>
       <div class="imgwrapper">
         <img
-          src="../../assets/bike.svg"
+          src="@/assets/bike.svg"
           v-for="bikeAmount in countBikes"
           :key="bikeAmount"
           id="bike"
