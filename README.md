@@ -53,7 +53,7 @@ I'm gonna combine these 2 datasets, there will probably be some entries that don
 
 Full documentation about my research questions and explanations are [in my wiki](https://github.com/ninoschelcher/frontend-data/wiki/Concept-Iteration)
 
-# 'Favourite' Component
+# 'Favourite' Component 📁 
 
 I have one component which I really liked, i've written a wiki page about it [here](https://github.com/ninoschelcher/frontend-applications/wiki/Making-a-cheeky-chart-without-D3). It's about a component that makes a chart without D3!
 
