@@ -1,4 +1,5 @@
 <template>
+  <!-- Vue didnt like id's and images so i had to use : in front of them -->
   <div :id="`${id}`">
     <img :src="require(`../../assets/${img}`)" />
     <p>{{ text }}</p>

@@ -47,13 +47,16 @@ export default {
     };
   },
   mounted() {
+    //Make data accessible under other name
     const data = this.chartData;
     this.data = data;
 
+    //Function to count the sum of capacity in garages
     const countCars = (accumulator, item) => {
       return accumulator + item.capacity;
     };
 
+    // Call functions and calculate new values
     this.carAmount = data.reduce(countCars, 0);
     this.bikeAmount = this.carAmount * 6;
     this.countCars = Math.floor(this.carAmount / 1000);

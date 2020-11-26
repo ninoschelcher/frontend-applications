@@ -38,19 +38,24 @@ export default {
     };
   },
   mounted() {
+    //Make data acccessible with data
     let data = this.chartData;
 
+    //Width and height of svg
     const width = 1200;
     const height = 700;
 
+    //Map projection of the visualization
     this.projection = d3
       .geoMercator()
       .scale(150000)
       .center([4.88, 52.35])
       .translate([width / 2, height / 2]);
 
+    //Path generator for projection
     this.pathGenerator = d3.geoPath().projection(this.projection);
 
+    //Select the svg and add the width, height and other attributes
     const map = d3
       .select("#map")
       .append("svg")
@@ -59,23 +64,27 @@ export default {
       .attr("preserveAspectRatio", "xMinYMin meet")
       .attr("viewBox", `0 0 ${width} ${height}`);
 
+    //appending & select
     const svg = d3.select("svg");
     const mapG = map.append("g");
     const dotG = map.append("g");
     const g = d3.selectAll("g");
 
+    //Zoom function
     const zoom = d3.zoom().on("zoom", (d) => {
       g.attr("transform", d.transform);
     });
 
     svg.call(zoom);
 
+    //Set tooltip
     this.toolTip = d3
       .select("#map")
       .append("div")
       .attr("class", "tooltip")
       .style("opacity", 0);
 
+    //Set geojson to json and fill the map
     d3.json(geojson).then((data) => {
       const district = mapG.selectAll("path").data(data.features);
       district
@@ -87,6 +96,7 @@ export default {
         .attr("fill", "none");
     });
 
+    //Place dots on the map with the data
     this.dots = dotG
       .selectAll("circle")
       .data(data)
@@ -105,6 +115,7 @@ export default {
       )
       .attr("r", "0");
 
+    //Transition on entering
     this.dots
       .transition()
       .duration(1500)
@@ -115,6 +126,7 @@ export default {
       .attr("fill-opacity", "0.4")
       .attr("cursor", "pointer");
 
+    //Onclick for dots
     this.dots.on("click", (d, data) => {
       this.toolTip
         .transition()

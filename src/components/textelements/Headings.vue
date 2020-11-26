@@ -1,4 +1,5 @@
  <template>
+  <!-- Check the prop, if its level 1 return a h1 or else if its level 2, return h2 -->
   <h1 v-if="level === 1">
     <slot></slot>
   </h1>
@@ -13,7 +14,7 @@ export default {
   props: {
     level: {
       type: Number,
-      required: true,  
+      required: true,
     },
   },
 };
@@ -26,8 +27,8 @@ h1 {
 h2 {
   font-size: 3em;
   text-align: center;
-  margin-top:1em;
-  margin-bottom:.3em;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
 }
 
 span {
@@ -38,7 +39,7 @@ span {
   h1 {
     max-width: 80%;
     margin: 0 auto;
-    font-size:4.5em;
+    font-size: 4.5em;
   }
 }
 </style>

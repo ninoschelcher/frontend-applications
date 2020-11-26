@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     handleScroll(event) {
+      //If you scroll up on mac/down on windows you get scrolled towards the right
       if (event.deltaY > 0) {
         this.scrollX =
           this.scrollX < document.body.scrollWidth
@@ -43,8 +44,8 @@ export default {
               ? this.scrollX + document.body.clientWidth
               : this.scrollX
             : document.body.scrollWidth;
-
         window.scroll(this.scrollX, 0);
+        //If you scroll down on mac/up on windows you get scrolled towards the right
       } else if (event.deltaY < 0) {
         this.scrollX =
           this.scrollX > 0
