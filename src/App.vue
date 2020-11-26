@@ -44,6 +44,15 @@ export default {
               ? this.scrollX + document.body.clientWidth
               : this.scrollX
             : document.body.scrollWidth;
+
+        //Select all sections, check if current section is the same as where the client is located and add a class with animation
+        const sections = document.querySelectorAll("section");
+        sections.forEach((element) => {
+          const pagenr = this.scrollX / document.body.clientWidth;
+          if (element.dataset.page == pagenr) {
+            element.classList.add("doFadeIn");
+          }
+        });
         window.scroll(this.scrollX, 0);
         //If you scroll down on mac/up on windows you get scrolled towards the right
       } else if (event.deltaY < 0) {

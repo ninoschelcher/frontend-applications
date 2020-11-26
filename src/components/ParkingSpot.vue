@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section data-page="2">
     <Headings :level="2">
       A <span>car</span> on a parking spot <span>vs</span> a <span>bike</span>.
     </Headings>

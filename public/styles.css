@@ -54,3 +54,20 @@ section:first-of-type {
     border-radius: 5px;
     visibility: hidden;
 }
+
+.doFadeIn {
+    animation: fadeIn 1.5s ease;
+    animation-delay: .2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

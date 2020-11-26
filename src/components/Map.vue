@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section data-page="1">
     <Headings :level="2">
       <span>Where</span> are the
       <span>parking garages</span> currently?</Headings

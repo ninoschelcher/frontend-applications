@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section data-page="3">
     <Headings :level="2"
       >How much <span>bike</span> capacity <span>potential</span> is
       there?</Headings
