@@ -117,6 +117,12 @@ export default {
 }
 .imgwrapper img {
   margin: 0.3em;
-  max-width: 100px;
+  max-width: 150px;
+}
+
+@media only screen and (max-width: 1500px) {
+  .imgwrapper img {
+    max-width: 40px;
+  }
 }
 </style>

@@ -58,4 +58,10 @@ button {
 .fade-leave-to {
   opacity: 0;
 }
+
+@media only screen and (max-width: 1500px) {
+  img {
+    max-width: 60%;
+  }
+}
 </style>
