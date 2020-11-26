@@ -48,7 +48,7 @@ export default {
 <style scoped>
 #data {
   position: relative;
-  top: -5em;
+  top: -6em;
   font-size: 0.8em;
   font-weight: bold;
 }
