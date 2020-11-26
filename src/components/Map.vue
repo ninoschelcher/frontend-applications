@@ -4,7 +4,10 @@
       <span>Where</span> are the
       <span>parking garages</span> currently?</Headings
     >
-    <Subtitle msg="Where are they located all over Amsterdam?" />
+    <div>
+      <Subtitle msg="Where are they located all over Amsterdam?" />
+      <p id="note">Note: These are not all parking garages in Amsterdam!</p>
+    </div>
     <MapChart v-if="isDataLoaded" :chartData="chartData" />
     <p id="data">Data used from RDW and Gemeente Amsterdam</p>
   </section>
@@ -48,5 +51,12 @@ export default {
   top: -5em;
   font-size: 0.8em;
   font-weight: bold;
+}
+
+#note {
+  font-weight: bold;
+  font-size: 0.6em;
+  margin: 1.3em 0 1em 0;
+  color: darkred;
 }
 </style>

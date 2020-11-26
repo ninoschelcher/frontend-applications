@@ -87,7 +87,7 @@ export default {
         .attr("fill", "none");
     });
 
-    const dots = dotG
+    this.dots = dotG
       .selectAll("circle")
       .data(data)
       .enter()
@@ -105,7 +105,7 @@ export default {
       )
       .attr("r", "0");
 
-    dots
+    this.dots
       .transition()
       .duration(1500)
       .attr("r", "10")
@@ -115,7 +115,7 @@ export default {
       .attr("fill-opacity", "0.4")
       .attr("cursor", "pointer");
 
-    dots.on("click", (d, data) => {
+    this.dots.on("click", (d, data) => {
       this.toolTip
         .transition()
         .duration(500)
@@ -135,9 +135,7 @@ export default {
   },
   methods: {
     asCapacity() {
-      const dots = d3.selectAll("circle").data(this.chartData);
-
-      dots
+      this.dots
         .transition()
         .duration(1500)
         .attr("r", "0")
@@ -149,31 +147,9 @@ export default {
         .attr("fill", "black")
         .attr("fill-opacity", "0.4")
         .attr("cursor", "pointer");
-
-      dots.on("click", (d, data) => {
-        this.toolTip
-          .transition()
-          .duration(500)
-          .style("opacity", 0.9)
-          .style("visibility", "visible");
-        this.toolTip
-          .html(
-            "<strong>Name:</strong> " +
-              data.name +
-              "<br>" +
-              "<strong>Capacity: </strong>" +
-              data.capacity
-          )
-          .style("left", d.offsetX + "px")
-          .style("top", d.offsetY + "px");
-      });
-
-      dots.exit().remove();
     },
     asNormal() {
-      const dots = d3.selectAll("circle").data(this.chartData);
-
-      dots
+      this.dots
         .transition()
         .duration(1500)
         .attr("r", "0")
@@ -185,24 +161,6 @@ export default {
         .attr("fill", "black")
         .attr("fill-opacity", "0.4")
         .attr("cursor", "pointer");
-
-      dots.on("click", (d, data) => {
-        this.toolTip
-          .transition()
-          .duration(500)
-          .style("opacity", 0.9)
-          .style("visibility", "visible");
-        this.toolTip
-          .html(
-            "<strong>Name:</strong> " +
-              data.name +
-              "<br>" +
-              "<strong>Capacity: </strong>" +
-              data.capacity
-          )
-          .style("left", d.offsetX + "px")
-          .style("top", d.offsetY + "px");
-      });
     },
     resetActive() {
       this.showNormal = false;
@@ -234,13 +192,16 @@ div:first-of-type {
 button {
   margin: 0 1em;
   background: transparent;
-  border: none;
   font-weight: bold;
   cursor: pointer;
   outline: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  transition-delay: 1.5s;
 }
 
 button.active {
+  transition-delay: 1.5s;
   border-bottom: 3px solid #000;
   padding: 0.5em 0;
 }

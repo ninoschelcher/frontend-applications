@@ -116,16 +116,4 @@ export default {
   margin: 0.3em;
   max-width: 100px;
 }
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.2s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-active {
-  transition-delay: 0.2s;
-}
 </style>
