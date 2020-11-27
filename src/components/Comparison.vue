@@ -4,7 +4,7 @@
       >How much <span>bike</span> capacity <span>potential</span> is
       there?</Headings
     >
-    <Subtitle msg="Now how many bikes would replace the cars?" />
+    <Subtitle msg="How many bikes could replace the cars?" />
     <BarChart v-if="isDataLoaded" :chartData="chartData" />
   </section>
 </template>
