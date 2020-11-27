@@ -13,7 +13,7 @@
           id="car"
         />
       </div>
-      <h3 class="amounts">{{ carAmount }} + Car Spots</h3>
+      <h3 class="amounts">{{ carAmount }} Car Spots</h3>
     </div>
     <div>
       <div class="info">
@@ -28,7 +28,7 @@
           id="bike"
         />
       </div>
-      <h3 class="amounts">{{ bikeAmount }} + Potential Bike Spots</h3>
+      <h3 class="amounts">{{ bikeAmount }} Potential Bike Spots</h3>
     </div>
   </div>
 </template>
