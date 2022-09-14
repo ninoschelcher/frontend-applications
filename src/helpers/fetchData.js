@@ -5,7 +5,7 @@ import { combineDataSets } from './combineData.js'
 
 export default async function fetchData () {
   const parkingSpotSpecification = await fetchEndpoints(parkingSpecifications);
-  const geoLocation = await fetchEndpoints(geoLocations);
+  const geoLocation = await fetchEndpoints(geoLocations);''
   const specificLocations = getSpecificLocation(
     parkingSpotSpecification,
     row,

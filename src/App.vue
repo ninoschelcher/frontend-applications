@@ -27,10 +27,10 @@ export default {
   },
   mounted() {
     this.scrollX = 0;
-    window.addEventListener("mousewheel", this.handleScroll);
+    window.addEventListener("wheel", this.handleScroll);
   },
   unmounted() {
-    window.removeEventListener("mousewheel", this.handleScroll);
+    window.removeEventListener("wheel", this.handleScroll);
   },
   methods: {
     handleScroll(event) {
